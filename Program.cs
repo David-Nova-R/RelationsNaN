@@ -5,7 +5,7 @@ builder.Services.AddDbContext<RelationsNaNContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("RelationsNaNContext") ?? throw new InvalidOperationException("Connection string 'RelationsNaNContext' not found.")));
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 builder.Services.AddScoped<DbInitializer>();
 
